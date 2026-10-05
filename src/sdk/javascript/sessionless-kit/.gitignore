@@ -1,0 +1,3 @@
+node_modules/
+# the repo-wide ignore of bin/ would otherwise hide the CLI source
+!bin/

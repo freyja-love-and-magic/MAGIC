@@ -1,0 +1,35 @@
+{
+  "name": "sessionless-kit",
+  "version": "0.1.0",
+  "description": "Sessionless keys made easy: create, save, sign, and verify in a few lines, with no sessions and no global state",
+  "type": "module",
+  "main": "src/index.js",
+  "types": "src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js"
+    },
+    "./browser": {
+      "types": "./src/index.d.ts",
+      "import": "./src/browser.js"
+    }
+  },
+  "bin": {
+    "sessionless-kit": "./bin/cli.js"
+  },
+  "files": ["src", "bin"],
+  "scripts": {
+    "test": "node --test \"test/*.test.js\""
+  },
+  "keywords": ["sessionless", "magic", "secp256k1", "signing", "auth"],
+  "author": "planetnineisaspaceship",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "ethereum-cryptography": "^2.1.3"
+  },
+  "devDependencies": {
+    "sessionless-node": "^0.11.0"
+  }
+}
