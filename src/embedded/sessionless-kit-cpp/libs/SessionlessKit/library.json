@@ -1,0 +1,10 @@
+{
+  "name": "SessionlessKit",
+  "version": "0.1.0",
+  "description": "Sessionless keys for microcontrollers: create, save (NVS), sign, verify. Wire-compatible with sessionless-node.",
+  "keywords": "sessionless, magic, secp256k1, keccak, signing, esp32",
+  "license": "MIT",
+  "authors": [{ "name": "planetnineisaspaceship" }],
+  "frameworks": ["arduino", "espidf"],
+  "platforms": "*"
+}

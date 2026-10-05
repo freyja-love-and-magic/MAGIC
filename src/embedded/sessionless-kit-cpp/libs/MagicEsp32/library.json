@@ -1,0 +1,11 @@
+{
+  "name": "MagicEsp32",
+  "version": "0.1.0",
+  "description": "ESP32 (Arduino core) implementations of MagicCore interfaces: ESP-NOW Transport, HTTPS fount Resolver, NVS UUID store.",
+  "keywords": "magic, esp32, esp-now, fount",
+  "license": "MIT",
+  "authors": [{ "name": "planetnineisaspaceship" }],
+  "frameworks": "arduino",
+  "platforms": "espressif32",
+  "dependencies": [{ "name": "MagicCore" }, { "name": "SessionlessKit" }]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "MagicWand",
+  "version": "0.1.0",
+  "description": "MAGIC caster ('wand'): learns time from a gateway, registers, signs and sends spells over any Transport.",
+  "keywords": "magic, sessionless, wand, caster",
+  "license": "MIT",
+  "authors": [{ "name": "planetnineisaspaceship" }],
+  "frameworks": "*",
+  "platforms": "*",
+  "dependencies": [{ "name": "MagicCore" }, { "name": "SessionlessKit" }]
+}

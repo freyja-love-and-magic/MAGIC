@@ -1,0 +1,11 @@
+{
+  "name": "MagicCore",
+  "version": "0.1.0",
+  "description": "Transport-independent MAGIC protocol core: signed message strings, spell JSON with enforced size limits, wire frames, clock, ordinal. No hardware dependencies.",
+  "keywords": "magic, sessionless, spell, gateway, caster",
+  "license": "MIT",
+  "authors": [{ "name": "planetnineisaspaceship" }],
+  "frameworks": "*",
+  "platforms": "*",
+  "dependencies": [{ "name": "SessionlessKit" }]
+}

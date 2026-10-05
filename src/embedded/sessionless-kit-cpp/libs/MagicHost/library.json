@@ -1,0 +1,10 @@
+{
+  "name": "MagicHost",
+  "version": "0.1.0",
+  "description": "Host (macOS/Linux/Pi) implementations of MagicCore interfaces: a libcurl fount Resolver. Not built for microcontrollers.",
+  "license": "MIT",
+  "authors": [{ "name": "planetnineisaspaceship" }],
+  "frameworks": "*",
+  "platforms": ["native", "linux_x86_64", "linux_arm", "linux_aarch64", "darwin"],
+  "dependencies": [{ "name": "MagicCore" }, { "name": "SessionlessKit" }]
+}

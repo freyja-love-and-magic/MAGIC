@@ -1,0 +1,11 @@
+{
+  "name": "MagicGateway",
+  "version": "0.1.0",
+  "description": "MAGIC gateway: receives wand frames over any Transport, adds its own signature and extra, resolves through any Resolver.",
+  "keywords": "magic, sessionless, gateway",
+  "license": "MIT",
+  "authors": [{ "name": "planetnineisaspaceship" }],
+  "frameworks": "*",
+  "platforms": "*",
+  "dependencies": [{ "name": "MagicCore" }, { "name": "SessionlessKit" }]
+}
