@@ -1,0 +1,4 @@
+config.js
+data/
+node_modules/
+public/js/cast.bundle.js

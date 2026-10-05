@@ -1,0 +1,27 @@
+{
+  "name": "endless-battle",
+  "version": "0.1.0",
+  "description": "A Final Fantasy-style battle where no one dies, streamed via OBS, with a MAGIC gateway so viewers can cast spells that change the fight.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "build": "node scripts/build-cast.js",
+    "prestart": "npm run build",
+    "start": "node server.js",
+    "test": "node --test \"test/*.test.js\"",
+    "test:engine": "node --test test/engine.test.js",
+    "test:live": "node test/e2e/live.mjs",
+    "test:sound": "node test/e2e/sound.mjs"
+  },
+  "author": "planetnineisaspaceship",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "magic-gateway-js": "file:../../server/javascript/magic-adapter",
+    "sessionless-kit": "file:../../sdk/javascript/sessionless-kit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.0",
+    "jsdom": "^24.0.0"
+  }
+}

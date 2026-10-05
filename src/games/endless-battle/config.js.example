@@ -1,0 +1,18 @@
+// Copy this file to config.js (gitignored) and adjust as needed.
+export default {
+  // The MAGIC resolver. Start fount yourself:  cd fount/src/server/node && LOCALHOST=true node fount.js   (port 3006)
+  FOUNT_BASE: 'http://localhost:3006',
+
+  PORT: 3300,
+
+  // The address VIEWERS can reach this server at. Twitch viewers can't reach localhost, so for a real stream run a
+  // tunnel (e.g. `cloudflared tunnel --url http://localhost:3300`) and put its https address here. It is the address shown
+  // on the stream and in the one-tap link.
+  PUBLIC_URL: '',
+
+  // The code viewers type to join, shown on the stream. Leave empty for a fresh random 4-character code each time the
+  // server starts, or set your own (4-8 letters or digits) to keep it the same between shows.
+  JOIN_CODE: '',
+
+  TICK_MS: 50
+};

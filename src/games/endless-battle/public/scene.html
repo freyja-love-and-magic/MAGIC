@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Endless Battle</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/scene.css">
+</head>
+<body>
+<div id="stage">
+  <div id="sky"></div>
+  <div id="floor"></div>
+  <div id="units"></div>
+  <div id="fx"></div>
+  <div id="flash"></div>
+
+  <div id="message" class="win"><span id="message-text"></span></div>
+  <div id="boss" class="win"><span id="boss-name"></span><div class="bar"><div id="boss-fill"></div></div><span id="boss-hp"></span></div>
+  <div id="ticker" class="win"></div>
+
+  <div id="enemies" class="win"></div>
+  <div id="cast" class="win">
+    <div class="join">
+      <div class="join-title">JOIN CODE</div>
+      <div id="join-code">----</div>
+      <div id="cast-url"></div>
+    </div>
+    <div class="cast-text">
+      <div class="cast-title">VIEWERS: CAST A SPELL</div>
+      <div id="cast-spells"></div>
+    </div>
+  </div>
+  <div id="party" class="win"></div>
+  <div id="sound" hidden>Click anywhere to enable sound</div>
+</div>
+<script type="module" src="/js/scene.js"></script>
+</body>
+</html>

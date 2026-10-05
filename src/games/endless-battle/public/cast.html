@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Cast a spell</title>
+<style>
+  :root { --bg: #0d1030; --card: #1a2275; --edge: #e9e9f8; --ink: #f4f4ff; --dim: #9fb0ff; --gold: #ffe27a; --green: #5dff8a; --red: #ff7a7a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; min-height: 100vh; background: radial-gradient(120% 80% at 50% 0%, #2c1d6e, var(--bg)); color: var(--ink);
+    font: 17px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; padding: max(16px, env(safe-area-inset-top)) 16px max(24px, env(safe-area-inset-bottom)); }
+  main { max-width: 520px; margin: 0 auto; }
+  h1 { font-size: 24px; margin: 4px 0 2px; }
+  .sub { color: var(--dim); margin: 0 0 16px; }
+  .me { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+  .me b { color: var(--gold); }
+  .mp { height: 12px; border-radius: 6px; background: #060a30; border: 2px solid #3a4590; overflow: hidden; margin-bottom: 18px; }
+  .mp i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, #6fd0ff, #5a8cff); transition: width .4s; }
+  .spells { display: grid; gap: 12px; }
+  button.spell { display: grid; grid-template-columns: 52px 1fr auto; align-items: center; gap: 12px; text-align: left; width: 100%;
+    padding: 14px 16px; border-radius: 14px; border: 2px solid var(--edge); background: linear-gradient(180deg, #2a3cc0, #141c80); color: var(--ink);
+    font: inherit; cursor: pointer; min-height: 68px; position: relative; overflow: hidden; }
+  button.spell:active:not(:disabled) { transform: scale(.98); }
+  button.spell:disabled { opacity: .55; cursor: default; }
+  button.spell:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  .icon { font-size: 34px; text-align: center; }
+  .name { font-weight: 700; font-size: 19px; }
+  .blurb { color: var(--dim); font-size: 14px; }
+  .cost { color: #9fd0ff; font-weight: 700; }
+  .cool { position: absolute; left: 0; bottom: 0; height: 4px; background: var(--gold); width: 0; }
+  #status { min-height: 52px; margin-top: 18px; padding: 12px 14px; border-radius: 12px; background: #00000040; }
+  #status.ok { color: var(--green); } #status.err { color: var(--red); }
+  .foot { color: var(--dim); font-size: 13px; margin-top: 22px; }
+  [hidden] { display: none !important; }
+  #join form { display: grid; gap: 12px; margin-top: 6px; }
+  #join label { color: var(--dim); }
+  #code { font: 700 44px/1.2 ui-monospace, Menlo, Consolas, monospace; letter-spacing: 12px; text-align: center; text-transform: uppercase; width: 100%;
+    padding: 12px 8px 12px 20px; border-radius: 14px; border: 2px solid var(--edge); background: #060a30; color: var(--ink); }
+  #code:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
+  button.go { min-height: 56px; border-radius: 14px; border: 2px solid var(--edge); background: linear-gradient(180deg, #3f8f4c, #1d5a2b); color: var(--ink); font: 700 19px system-ui; cursor: pointer; }
+  button.go:disabled { opacity: .55; }
+  #join-error { min-height: 24px; color: var(--red); margin: 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Cast a spell</h1>
+  <p class="sub">Your spell changes the fight, live on stream.</p>
+  <section id="join" hidden>
+    <form id="join-form" autocomplete="off">
+      <label for="code">Enter the code shown on the stream</label>
+      <input id="code" maxlength="8" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" enterkeyhint="go" aria-describedby="join-error">
+      <button class="go" type="submit" id="join-go">Join</button>
+      <p id="join-error" role="alert"></p>
+    </form>
+  </section>
+  <div id="game" hidden>
+  <div class="me"><span id="who">Setting up your wand…</span><span id="mp-text"></span></div>
+  <div class="mp" aria-hidden="true"><i id="mp-bar"></i></div>
+  <div class="spells" id="spells"></div>
+  <div id="status" role="status" aria-live="polite"></div>
+  </div>
+  <p class="foot">Spells cost MP, which refills over time. Your wand is a key kept in this browser: no account, no email.</p>
+</main>
+<script src="/js/cast.bundle.js"></script>
+</body>
+</html>
